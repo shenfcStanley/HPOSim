@@ -14,6 +14,9 @@ biocLite("AnnotationDbi")
 
 4. library(HPOSim)
 
+Sometimes error "there is no package called 'Rcpp'" will occur, to address this, install.packages('Rcpp'), then library('Rcpp')
+
+
 First setup: IC<-get("termIC",envir=HPOSimEnv)
 
 Test 1: calcTermSim("HP:0003159",i, method = "Wang", IC, verbose = FALSE)
