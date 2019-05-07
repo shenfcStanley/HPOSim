@@ -1,18 +1,15 @@
 #data2<-scan('C:/Users/Owner/Downloads/AllHPO.txt',what="character")
 
-#cerebral palsy
-#transitional cell carcinoma
-#hepatic encephalopathy
-#focal segmental glomerulosclerosis
+#ovarian cancer
 #myelofibrosis
-#spina bifida
-#hypoparathyroidism
-#tetralogy of fallot
-#thalassemia
-#acromegaly
-#bronchiolitis obliterans
+#primary sclerosing cholangitis
+#b-cell lymphoma
+#dilated cardiomyopathy
+#laryngomalacia
 #cryoglobulinemia
 #esophageal cancer
+#papillary thyroid carcinoma
+#clear cell renal cell carcinoma
 
 #Resnik
 #JiangConrath
@@ -27,7 +24,7 @@
 combinemethod="funSimMax"
 IC<-get("termIC",envir=HPOSimEnv)
 
-df <- read.table('F:/Dropbox2/Dropbox/JBI Special Issue 2019/Major Revision/PatientSim-10Diseases/hypoparathyroidism.csv',sep = '\t',stringsAsFactors=FALSE)
+df <- read.table('F:/Dropbox2/Dropbox/JBI Special Issue 2019/Major Revision/PatientSim-10Diseases/clear cell renal cell carcinoma.csv',sep = '\t',stringsAsFactors=FALSE)
 
 total = 0
 
@@ -39,7 +36,7 @@ list1 = strsplit(p1Phe, ",")
 list2 = strsplit(p2Phe, ",")
 anno1 = unlist(list1,use.names=FALSE)
 anno2 = unlist(list2,use.names=FALSE)
-value = getTermListSim(anno1, anno2, combinemethod="funSimMax", method="JiangConrath", IC, verbose=FALSE)
+value = getTermListSim(anno1, anno2, combinemethod="funSimMax", method="Wang", IC, verbose=FALSE)
 total = total + value
 print(value)
 }
