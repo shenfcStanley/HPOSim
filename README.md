@@ -19,6 +19,14 @@ Sometimes error "there is no package called 'Rcpp'" will occur, to address this,
 
 First setup: IC<-get("termIC",envir=HPOSimEnv)
 
+Sometimes error "termIC" not found will occur. To solve this, just run some sample code to initiate HPOSim package, such as:
+
+ terms<-c("HP:0000002","HP:0000012")
+ result<-getTerm(terms)
+ print(result)
+
+
+
 Test 1: calcTermSim("HP:0003159",i, method = "Wang", IC, verbose = FALSE)
 
 Test 2:
