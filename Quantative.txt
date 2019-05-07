@@ -1,0 +1,53 @@
+#data2<-scan('C:/Users/Owner/Downloads/AllHPO.txt',what="character")
+
+#cerebral palsy
+#transitional cell carcinoma
+#hepatic encephalopathy
+#focal segmental glomerulosclerosis
+#myelofibrosis
+#spina bifida
+#hypoparathyroidism
+#tetralogy of fallot
+#thalassemia
+#acromegaly
+#bronchiolitis obliterans
+#cryoglobulinemia
+#esophageal cancer
+
+#Resnik
+#JiangConrath
+#Lin
+#simIC
+#relevance
+#GIC
+#Wang
+
+
+
+combinemethod="funSimMax"
+IC<-get("termIC",envir=HPOSimEnv)
+
+df <- read.table('F:/Dropbox2/Dropbox/JBI Special Issue 2019/Major Revision/PatientSim-10Diseases/hypoparathyroidism.csv',sep = '\t',stringsAsFactors=FALSE)
+
+total = 0
+
+for (i in 1:nrow(df)){
+
+p1Phe <- df[i,1]
+p2Phe <- df[i,2]
+list1 = strsplit(p1Phe, ",")
+list2 = strsplit(p2Phe, ",")
+anno1 = unlist(list1,use.names=FALSE)
+anno2 = unlist(list2,use.names=FALSE)
+value = getTermListSim(anno1, anno2, combinemethod="funSimMax", method="JiangConrath", IC, verbose=FALSE)
+total = total + value
+print(value)
+}
+
+print(total/20)
+
+
+#sink("c:/Users/Owner/Downloads/output.txt")
+
+
+
