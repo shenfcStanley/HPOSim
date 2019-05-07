@@ -1,0 +1,23 @@
+data2<-scan('C:/Users/Owner/Downloads/AllHPO.txt',what="character")
+
+sink("c:/Users/Owner/Downloads/output.txt")
+
+for(i in data2){ cat(calcTermSim("HP:0003159",i, method = "Wang", IC, verbose = FALSE),"\n")}
+
+
+#Nephrocalcinosis   HP:0000121
+#Calcium oxalate nephrolithiasis HP:0008672
+#Hematuria  HP:0000790
+#Calcinosis  HP:0003761
+#Hyperoxaluria  HP:0003159
+
+#Resnik
+#JiangConrath
+#Lin
+#simIC
+#relevance
+#GIC
+#Wang
+
+
+
